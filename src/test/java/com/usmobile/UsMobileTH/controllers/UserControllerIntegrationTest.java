@@ -8,6 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.function.Consumer;
 
+import com.usmobile.UsMobileTH.TestContainersConfiguration;
 import com.usmobile.UsMobileTH.dtos.user.UserCreateRequest;
 import com.usmobile.UsMobileTH.dtos.user.UserResponse;
 import com.usmobile.UsMobileTH.dtos.user.UserUpdatedRequest;
@@ -16,10 +17,12 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
+import org.springframework.context.annotation.Import;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 
+@Import(TestContainersConfiguration.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class UserControllerIntegrationTest {
     @Autowired

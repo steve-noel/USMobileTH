@@ -17,7 +17,7 @@ I will use Spring Boot 3.x  and Java 22 to create a Restful microservice. I will
 (the database credentials are inside the `application.yaml` file) to store the data.
 To insert initial data in the database I will use the Mongock database migration library. This allows 
 me to write database migrations inside the codebase. For simplicity, I will use the Lombok library to 
-make working with the java objects easier. Lombok also makes logging easier as well. I will use the flapdoodle library 
+make working with the java objects easier. Lombok also makes logging easier as well. I will use the testContainer library 
 to add an embedded Mongo database to the integration tests.
 
 Two of the required endpoints(create/update) deal with the user collection, I will create a user controller 
@@ -38,7 +38,7 @@ This endpoint should be a GET request as it is fetching data from the service.
 - JUnit 5
 - Lombok
 - Mongock
-- flapdoodle embedded MongoDB
+- TestContainers
 
 ## Setup Instructions
 
@@ -73,7 +73,8 @@ This endpoint should be a GET request as it is fetching data from the service.
    docker run -p 8080:8080 us-mobile-th
    ```
 ## Testing
-To run unit & integration tests:
+### Running the tests require you to have docker installed.
+To run the unit & integration tests run 
 ```bash
 mvn test
 ```
@@ -92,4 +93,3 @@ to view the API documentation and test endpoints interactively.
 - Add `createDate` & `updatedDate` to all collections for auditing purposes.
 - Add JWT authentication to each endpoint in the API.
 - Return better error messages from the API.
-- Use TestContainers for the embedded MongoDB instead of flapdoodle.

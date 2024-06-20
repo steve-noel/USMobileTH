@@ -14,6 +14,7 @@ import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.function.Consumer;
 
+import com.usmobile.UsMobileTH.TestContainersConfiguration;
 import com.usmobile.UsMobileTH.dtos.cycle.CycleHistoryDTO;
 import com.usmobile.UsMobileTH.dtos.cycle.CycleHistoryResponse;
 import com.usmobile.UsMobileTH.models.Cycle;
@@ -25,10 +26,12 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
+import org.springframework.context.annotation.Import;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 
+@Import(TestContainersConfiguration.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class CycleControllerIntegrationTest {
     @Autowired
