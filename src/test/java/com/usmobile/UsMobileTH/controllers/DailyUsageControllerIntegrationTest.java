@@ -81,6 +81,7 @@ public class DailyUsageControllerIntegrationTest {
             cycle.setMdn(mdn);
             cycle.setUserId(userId);
             cycle.setStartDate(now.minus(Duration.ofDays(10)));
+            cycle.setEndDate(now.minus(Duration.ofDays(20)));
         };
         existingCycles = List.of(randomCycle(currentCycle),randomCycle(inValidCycle));
         existingCycles = cycleRepository.saveAll(existingCycles);

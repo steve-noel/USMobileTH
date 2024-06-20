@@ -111,6 +111,12 @@
 					<groupId>org.jacoco</groupId>
 					<artifactId>jacoco-maven-plugin</artifactId>
 					<version>0.8.12</version>
+					<configuration>
+						<excludes>
+							<exclude>com/usmobile/UsMobileTH/config/*</exclude>
+							<exclude>com/usmobile/UsMobileTH/config/dbmigrations/*</exclude>
+						</excludes>
+					</configuration>
 				</plugin>
 			</plugins>
 		</pluginManagement>
