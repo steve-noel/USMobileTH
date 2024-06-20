@@ -1,14 +1,13 @@
 # USMobile Take Home
 
 This is a Spring Boot microservice that provides RESTful APIs to manage billing cycles, user profiles, and daily usage data. 
-It uses MongoDB as the database.
 
 
 ## Table of Contents
 - [Thought Process](#thought-process)
-- [Features](#features)
 - [Technologies](#technologies)
 - [Setup Instructions](#setup-instructions)
+- [Running With Docker](#running-with-docker)
 - [Testing](#testing)
 - [Documentation](#documentation)
 - [Improvements](#improvements)
@@ -18,7 +17,7 @@ I will use Spring Boot 3.x  and Java 22 to create a Restful microservice. I will
 (the database credentials are inside the `application.yaml` file) to store the data.
 To insert initial data in the database I will use the Mongock database migration library. This allows 
 me to write database migrations inside the codebase. For simplicity, I will use the Lombok library to 
-make working with the objects easier. Lombok also makes logging easier as well. I will use the flapdoodle library 
+make working with the java objects easier. Lombok also makes logging easier as well. I will use the flapdoodle library 
 to add an embedded Mongo database to the integration tests.
 
 Two of the required endpoints(create/update) deal with the user collection, I will create a user controller 
@@ -28,12 +27,6 @@ One of the endpoints fetches a users cycle history, I will create a cycle contro
 
 One of the endpoints fetches a users daily usage for the current cycle, I will create a dailyUsage controller that defines this endpoint.
 
-## Features
-- Manage billing cycles and daily usage data.
-- Create and update user profiles.
-- Retrieve current cycle daily usage for a given customer.
-- Retrieve cycle history for a given phone number (mdn).
-
 ## Technologies
 - Java 22
 - Spring Boot 3.x
@@ -42,7 +35,7 @@ One of the endpoints fetches a users daily usage for the current cycle, I will c
 - JUnit 5
 - Lombok
 - Mongock
-- flapdoodle embedded Mongo database
+- flapdoodle embedded MongoDB
 
 ## Setup Instructions
 
@@ -65,6 +58,17 @@ One of the endpoints fetches a users daily usage for the current cycle, I will c
     ```bash
     mvn spring-boot:run
     ```
+## Running With Docker
+### Make sure you have docker installed your computer.
+
+1. To build the Docker image, navigate to the root directory containing the `Dockerfile` and run:
+   ```bash
+   docker build -t us-mobile-th  .
+   ```
+2. To run the Docker container, use the following command:
+   ```bash
+   docker run -p 8080:8080 us-mobile-th
+   ```
 ## Testing
 To run unit & integration tests:
 ```bash
