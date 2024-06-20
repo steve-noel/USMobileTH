@@ -1,0 +1,14 @@
+server:
+  servlet:
+    context-path: /api/v1
+spring:
+  application:
+    name: UsMobileTH
+  data:
+    mongodb:
+      database: usmobile
+      uri: mongodb+srv://snoel0015:RHZ1t83ApCA5ETj6@usmobileth.nhiievb.mongodb.net/?retryWrites=true&w=majority&appName=USMobileTH
+mongock:
+  change-logs-scan-package: com.usmobile.UsMobileTH.config.dbmigrations
+  transaction-enabled: true
+
