@@ -20,7 +20,6 @@ import com.usmobile.UsMobileTH.models.Cycle;
 import com.usmobile.UsMobileTH.repositories.CycleRepository;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.hamcrest.Matchers;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

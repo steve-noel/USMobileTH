@@ -1,20 +1,13 @@
 package com.usmobile.UsMobileTH.services;
 
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.security.SecureRandom;
-import java.security.spec.KeySpec;
 import java.util.function.Consumer;
 
-import javax.crypto.SecretKeyFactory;
-import javax.crypto.spec.PBEKeySpec;
 import javax.inject.Inject;
 
 import com.usmobile.UsMobileTH.dtos.user.UserCreateRequest;
 import com.usmobile.UsMobileTH.dtos.user.UserUpdatedRequest;
 import com.usmobile.UsMobileTH.models.User;
 import com.usmobile.UsMobileTH.repositories.UserRepository;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

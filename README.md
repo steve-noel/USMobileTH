@@ -21,11 +21,14 @@ make working with the java objects easier. Lombok also makes logging easier as w
 to add an embedded Mongo database to the integration tests.
 
 Two of the required endpoints(create/update) deal with the user collection, I will create a user controller 
-that contains both of these endpoints. 
+that contains both of these endpoints. The create endpoint should be a POST since it is creating a new user and 
+the update endpoints should be a PUT since it is updating an existing user.
 
 One of the endpoints fetches a users cycle history, I will create a cycle controller that defines this endpoint.
+This endpoint should be a GET request as it is fetching data from the service.
 
 One of the endpoints fetches a users daily usage for the current cycle, I will create a dailyUsage controller that defines this endpoint.
+This endpoint should be a GET request as it is fetching data from the service.
 
 ## Technologies
 - Java 22
@@ -46,8 +49,8 @@ One of the endpoints fetches a users daily usage for the current cycle, I will c
 ### Installation
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-username/cycle-management-microservice.git
-    cd cycle-management-microservice
+    git clone https://github.com/steve-noel/USMobileTH.git
+    cd USMobileTH
     ```
    
 2. Build the project:
